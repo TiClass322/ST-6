@@ -34,9 +34,9 @@ public class BoardTest {
     @Test
     public void testMakeInvalidMove() {
         board.makeMove(0, 0, Player.X);
-        assertFalse(board.makeMove(0, 0, Player.O)); // Cell already taken
-        assertFalse(board.makeMove(-1, 0, Player.O)); // Invalid coordinates
-        assertFalse(board.makeMove(3, 0, Player.O)); // Invalid coordinates
+        assertFalse(board.makeMove(0, 0, Player.O));
+        assertFalse(board.makeMove(-1, 0, Player.O));
+        assertFalse(board.makeMove(3, 0, Player.O));
     }
 
     @Test
@@ -108,7 +108,6 @@ public class BoardTest {
         Board copiedBoard = new Board(board);
         assertEquals(Player.X, copiedBoard.getCell(1, 1));
         assertTrue(copiedBoard.makeMove(0, 0, Player.O));
-        // Ensure original board is not affected
         assertTrue(board.isCellEmpty(0, 0));
     }
     
@@ -119,8 +118,6 @@ public class BoardTest {
 
     @Test
     public void testPrintBoard() {
-        // This is tricky to test without capturing stdout.
-        // For coverage, we just call it.
         board.printBoard();
     }
 }

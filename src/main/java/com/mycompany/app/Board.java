@@ -14,7 +14,7 @@ public class Board {
     }
 
     public Board(Board other) {
-        this(); // Initialize new board
+        this();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 this.board[i][j] = other.board[i][j];
@@ -60,7 +60,7 @@ public class Board {
             return board[0][2];
         }
 
-        return Player.NONE; // No winner yet
+        return Player.NONE;
     }
 
     public boolean isBoardFull() {

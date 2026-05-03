@@ -14,7 +14,7 @@ public class Game {
         minimax = new Minimax();
         this.humanPlayer = human;
         this.aiPlayer = ai;
-        this.currentPlayer = Player.X; // X always starts
+        this.currentPlayer = Player.X; 
     }
     
     public void startGame() {
@@ -76,7 +76,7 @@ public class Game {
                 }
             } catch (Exception e) {
                 System.out.println("Invalid input. Please enter numbers for row and column.");
-                scanner.next(); // clear buffer
+                scanner.next(); 
             }
         }
     }

@@ -3,5 +3,5 @@ package com.mycompany.app;
 public enum Player {
     X,
     O,
-    NONE // Represents an empty cell
+    NONE
 }

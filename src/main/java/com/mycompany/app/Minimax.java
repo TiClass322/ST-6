@@ -13,7 +13,7 @@ public class Minimax {
                 if (board.isCellEmpty(i, j)) {
                     board.makeMove(i, j, aiPlayer);
                     int moveVal = minimax(board, 0, false, aiPlayer, opponent);
-                    board.makeMove(i, j, Player.NONE); // Undo the move
+                    board.makeMove(i, j, Player.NONE);
 
                     if (moveVal > bestVal) {
                         bestMove.row = i;

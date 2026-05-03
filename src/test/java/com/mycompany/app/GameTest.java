@@ -28,11 +28,9 @@ public class GameTest {
 
     @Test
     public void testAiTurn() {
-        Game game = new Game(Player.O, Player.X); // AI is X
+        Game game = new Game(Player.O, Player.X);
         game.aiTurn();
-        // After AI's turn, the board should not be empty.
-        assertFalse(game.getBoard().isBoardFull()); // it's just one move
-        // Just check that one cell is NOT empty.
+        assertFalse(game.getBoard().isBoardFull());
         long filledCells = 0;
         for(int i=0; i<3; i++) {
             for(int j=0; j<3; j++) {
@@ -63,21 +61,20 @@ public class GameTest {
         game.humanTurn(new java.util.Scanner(System.in));
         assertEquals(Player.X, game.getBoard().getCell(0, 0));
         
-        // Reset System.in
+
         System.setIn(System.in);
     }
     
     @Test
     public void testHumanTurnInvalidThenValid() {
         Game game = new Game(Player.X, Player.O);
-        String input = "4\n4\n0\n0\n"; // invalid, then valid
+        String input = "4\n4\n0\n0\n"; 
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
         game.humanTurn(new java.util.Scanner(System.in));
         assertEquals(Player.X, game.getBoard().getCell(0, 0));
 
-        // Reset System.in
         System.setIn(System.in);
     }
 }
