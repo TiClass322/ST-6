@@ -75,19 +75,12 @@ public class AppTest {
 
     @Test
     public void testPanelAction() throws Exception {
-        // This test is designed to increase coverage on the TicTacToePanel's
-        // actionPerformed method by programmatically "clicking" a button.
         TicTacToePanel panel = new TicTacToePanel(new GridLayout(3,3));
         
-        // Use reflection to access the private 'cells' array
         Field cellsField = TicTacToePanel.class.getDeclaredField("cells");
         cellsField.setAccessible(true);
         TicTacToeCell[] cells = (TicTacToeCell[]) cellsField.get(panel);
 
-        // "Click" the first cell
-        // A real click would result in a System.exit(), so we just call the method
-        // to get coverage without triggering the whole UI interaction.
-        // For the purpose of this test, we simulate the start of an action.
         assertDoesNotThrow(() -> {
             cells[0].doClick();
         });
